@@ -11,19 +11,21 @@ OBJ = $(SRC:.s=.o)
 # Cibles exécutables
 EXE = colleen/colleen grace/grace sully/sully
 
+FLAGS = -Wall -Werror -Wextra
+
 # Cible par défaut : compile tout
 all: $(EXE)
 	@echo "Compilation des fichiers assembleur terminée."
 
 # Règles pour les exécutables (utilisation de gcc pour inclure la libc)
 colleen/colleen: colleen/colleen.o
-	gcc -no-pie $< -o $@
+	gcc $(FLAGS) $< -o $@
 
 grace/grace: grace/grace.o
-	gcc -no-pie $< -o $@
+	gcc $(FLAGS) $< -o $@
 
 sully/sully: sully/sully.o
-	gcc -no-pie $< -o $@
+	gcc $(FLAGS) $< -o $@
 
 # Règles de compilation pour chaque fichier objet
 %.o: %.s
