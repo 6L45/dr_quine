@@ -13,7 +13,6 @@ EXE = colleen/colleen grace/grace sully/sully_5
 
 # Cible par défaut : compile tout
 all: $(EXE)
-	@echo "Compilation des fichiers C terminée."
 
 # Règles pour les exécutables
 colleen/colleen: colleen/colleen.o
