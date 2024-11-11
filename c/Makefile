@@ -5,23 +5,23 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 # Liste des fichiers sources et objets
-SRC = colleen/colleen.c grace/grace.c sully/sully_5.c
+SRC = colleen/Colleen.c grace/Grace.c sully/Sully.c
 OBJ = $(SRC:.c=.o)
 
 # Cibles exécutables
-EXE = colleen/colleen grace/grace sully/sully_5
+EXE = colleen/Colleen grace/Grace sully/Sully
 
 # Cible par défaut : compile tout
 all: $(EXE)
 
 # Règles pour les exécutables
-colleen/colleen: colleen/colleen.o
+colleen/colleen: colleen/Colleen.o
 	$(CC) $< -o $@
 
-grace/grace: grace/grace.o
+grace/grace: grace/Grace.o
 	$(CC) $< -o $@
 
-sully/sully_5: sully/sully_5.o
+sully/sully_5: sully/Sully.o
 	$(CC) $< -o $@
 
 # Règles de compilation pour chaque fichier objet

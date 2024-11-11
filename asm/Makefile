@@ -5,11 +5,11 @@ ASM = nasm
 ASMFLAGS = -f elf64
 
 # Liste des fichiers sources et objets
-SRC = colleen/colleen.s grace/grace.s sully/sully_5.s
+SRC = colleen/Colleen.s grace/Grace.s sully/Sully.s
 OBJ = $(SRC:.s=.o)
 
 # Cibles exécutables
-EXE = colleen/colleen grace/grace sully/sully
+EXE = colleen/Colleen grace/Grace sully/Sully
 
 FLAGS = -Wall -Werror -Wextra
 
@@ -17,13 +17,13 @@ FLAGS = -Wall -Werror -Wextra
 all: $(EXE)
 
 # Règles pour les exécutables (utilisation de gcc pour inclure la libc)
-colleen/colleen: colleen/colleen.o
+colleen/colleen: colleen/Colleen.o
 	gcc $(FLAGS) $< -o $@
 
-grace/grace: grace/grace.o
+grace/grace: grace/Grace.o
 	gcc $(FLAGS) $< -o $@
 
-sully/sully: sully/sully_5.o
+sully/sully: sully/Sully.o
 	gcc $(FLAGS) $< -o $@
 
 # Règles de compilation pour chaque fichier objet
